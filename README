@@ -1,0 +1,40 @@
+# Migrations
+npm run typeorm migration:create ./src/db/migrations/<migration_name>
+
+# ROTAS
+
+## Criar usuário
+/user (POST)
+body: {
+  username,
+  password
+}
+
+## Login
+/login (POST)
+body {
+  username,
+  password
+}
+
+RESPONSE -> {body}
+
+## Realizar transação
+/transaction (POST)
+body {
+  token,
+  creditedUser,
+  value
+}
+
+## Listar transações
+/transactions       (GET)
+?token=<jwt_token>
+&date=MM/DD/YYYY
+&filter=cash-in | cash-out
+
+
+[x] Criar rota para login
+[x] Adicionar tempo de validade para o token
+[x] Rota para listar transação que o usuário participou (com filtros de data, cash-in e cash-out)
+[x] Rota para verificar quanto dinheiro o usuário tem
