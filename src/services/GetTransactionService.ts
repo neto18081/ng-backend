@@ -21,7 +21,6 @@ export class GetTransactionService {
       }
     */
 
-    console.log(date)
     
     const transactionRepo = AppDataSource.getRepository(Transaction)
     const userRepo = AppDataSource.getRepository(User);

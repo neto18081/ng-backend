@@ -21,20 +21,18 @@ routes.get("/transactions", new GetTransactionController().handle);
 
 routes.get("/balance", new GetUserBalanceController().handle)
 
-const secret = process.env.JWT_SECRET_KEY;
 
 routes.post("/jwt/verify", (req, res) => {
+  const secret = process.env.JWT_SECRET_KEY;
   const { token } = req.body;
 
   try {
     const verify = jwt.verify(token, secret);
-    return res.json({
-      verify
+    return res.status(200).json({
+      valid: true
     })
   } catch(err) {
-      return res.status(404).json({
-        message: "Token inválido!"
-      })
+      return res.status(404).json({err})
   }
 })
 

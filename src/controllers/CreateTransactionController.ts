@@ -41,7 +41,7 @@ export class CreateTransactionController {
       return response.json(result);
 
     }catch (err) {
-      return response.status(404).json({
+      return response.status(403).json({
         message: "Token inválido!"
       })
     }
