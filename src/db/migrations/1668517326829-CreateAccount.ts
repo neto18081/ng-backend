@@ -8,7 +8,7 @@ export class CreateAccount1668517326829 implements MigrationInterface {
                 name: "account",
                 columns: [
                     {name: "id", type: "uuid", isPrimary: true},
-                    {name: "balance", type: "numeric", default: 100},
+                    {name: "balance", type: "numeric", default: 100.00},
                 ]
             })
         )

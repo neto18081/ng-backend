@@ -28,7 +28,10 @@ export class Transaction {
   @JoinColumn({ name: "creditedAccountId" })
   creditedAccount: User;
 
-  @Column()
+  @Column("decimal", {
+    scale: 2,
+    precision: 5
+  })
   value: number;
 
   @CreateDateColumn()

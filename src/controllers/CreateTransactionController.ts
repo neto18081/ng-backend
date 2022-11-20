@@ -30,7 +30,7 @@ export class CreateTransactionController {
       const result = await transactionService.execute({ 
         debitedUsername: user.username,
         creditedUsername,
-        value
+        value: parseFloat(value)
       });
       
 

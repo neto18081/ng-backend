@@ -49,8 +49,8 @@ export class CreateTransactionService {
       return new Error("Saldo insuficiente!");
     }
 
-    const debitedAccountBalance = debitedAccount.balance - value;
-    const creditedAccountBalance = creditedAccount.balance + value;
+    const debitedAccountBalance = parseFloat(debitedAccount.balance.toString()) - value;
+    const creditedAccountBalance = parseFloat(creditedAccount.balance.toString()) + value;
 
     accountRepo.update(debitedAccount, {balance: debitedAccountBalance})
     accountRepo.update(creditedAccount, {balance: creditedAccountBalance})

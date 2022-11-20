@@ -8,13 +8,16 @@ export class Account {
   @PrimaryColumn()
   id: string;
 
-  @Column()
+  @Column("decimal", {
+    scale: 2,
+    precision: 5
+  })
   balance: number;
 
   constructor() { 
     if (!this.id) {
       this.id = v4();
-      this.balance = 100;
+      this.balance = 100.00;
     }
   }
 
