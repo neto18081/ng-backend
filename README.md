@@ -18,10 +18,7 @@ Em seguida, rode o comando a seguir para instalar as dependências.
 ```bash
   npm install
 ```
-Com as dependências instaladas, é necessário criar as tabelas no banco de dados com o seguinte comando
-```bash
-  npm run migration:run
-```
+
 E para inicializar o servidor:
 ```bash
   npm run dev
